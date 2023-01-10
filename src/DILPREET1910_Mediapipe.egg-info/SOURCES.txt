@@ -2,8 +2,8 @@ LICENSE
 README.md
 pyproject.toml
 setup.cfg
-src/DILPREET1910_Mediapipe/HandTracker.py
 src/DILPREET1910_Mediapipe/__init__.py
+src/DILPREET1910_Mediapipe/main.py
 src/DILPREET1910_Mediapipe.egg-info/PKG-INFO
 src/DILPREET1910_Mediapipe.egg-info/SOURCES.txt
 src/DILPREET1910_Mediapipe.egg-info/dependency_links.txt
