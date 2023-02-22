@@ -81,5 +81,47 @@ class HandTracker:
                 z = (z1 + z2) // 2
                 self.distance = [distance, x, y, z]
 
+    def drawLandmarksZAxis(self, frame, results, wantAllLandmarks, landmark, printDistance,
+                           drawLinesBetweenLandmarks, clickAt):
+        """
+        0. WRIST                                         11. MIDDLE_FINGER_DIP
+        1. THUMB_CMC                                     12. MIDDLE_FINGER_TIP
+        2. THUMB_MCP                                     13. RING_FINGER_MCP.
+        3. THUMB_IP                                      14. RING_FINGER_PIP
+        4. THUMB_TIP                                     15. RING_FINGER_DIP
+        5. INDEX_FINGER_MCP                              16. RING_FINGER_TIP
+        6. INDEX_FINGER_PIP                              17. PINKY_MCP
+        7. INDEX_FINGER_DIP                              18. PINKY_PIP
+        8. INDEX_FINGER_TIP                              19. PINKY_DIP
+        9. MIDDLE_FINGER_MCP                             20. PINKY_TIP
+        10. MIDDLE_FINGER_PIP
+        """
+        mpDrawing = self.mpDrawing
+        mpHands = self.mpHands
+        for a, hand in enumerate(results.multi_hand_landmarks):
+            if wantAllLandmarks:
+                mpDrawing.draw_landmarks(frame, hand, mpHands.HAND_CONNECTIONS)
+            # find the distance between two landmarks
+            lmList = []
+            for id, lm in enumerate(hand.landmark):
+                h, w, c = frame.shape
+                cx, cy, cz = int(lm.x * w), int(lm.y * h), int(lm.z * w)
+                lmList.append([cx, cy, cz])
+            # ## uncomment below line to see the lmList array
+            # print(lmList)
+            x, y, z = lmList[landmark]
+            distance = z
+            if printDistance:
+                print(distance)
+
+            # draw the distance line on the screen
+            if drawLinesBetweenLandmarks:
+                if distance > clickAt:
+                    color = (255, 0, 255)
+                else:
+                    color = (100, 255, 100)
+                cv2.circle(frame, (x, y), 10, color, cv2.FILLED)
+            self.distance = [distance, x, y, z]
+
     def getDistance(self):
         return self.distance
