@@ -78,7 +78,8 @@ class HandTracker:
                 cv2.circle(frame, ((x1 + x2) // 2, (y1 + y2) // 2), 7, color, cv2.FILLED)
                 x = (x1 + x2) // 2
                 y = (y1 + y2) // 2
-                self.distance = [distance, x, y]
+                z = (z1 + z2) // 2
+                self.distance = [distance, x, y, z]
 
     def getDistance(self):
         return self.distance
