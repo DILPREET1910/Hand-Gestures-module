@@ -56,12 +56,12 @@ class HandTracker:
             lmList = []
             for id, lm in enumerate(hand.landmark):
                 h, w, c = frame.shape
-                cx, cy = int(lm.x * w), int(lm.y * h)
-                lmList.append([cx, cy])
+                cx, cy, cz = int(lm.x * w), int(lm.y * h), int(lm.z * w)
+                lmList.append([cx, cy, cz])
             # ## uncomment below line to see the lmList array
             # print(lmList)
-            x1, y1 = lmList[landmarkOne]
-            x2, y2 = lmList[landmarkTwo]
+            x1, y1, z1 = lmList[landmarkOne]
+            x2, y2, z2 = lmList[landmarkTwo]
             distance = int(math.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2))
             if printDistance:
                 print(distance)
