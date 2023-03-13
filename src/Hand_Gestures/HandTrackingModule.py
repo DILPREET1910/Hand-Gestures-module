@@ -125,3 +125,7 @@ class HandTracker:
 
     def getDistance(self):
         return self.distance
+
+
+def main():
+    pass
