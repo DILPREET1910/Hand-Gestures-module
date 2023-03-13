@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: hand-gestures
+Version: 0.1.1
+Summary: a minimalist custom module for mediapipe
+Home-page: https://github.com/DILPREET1910/Hand_Gestures_module
+Author: DILPREET1910
+Author-email: dsahney1910@gmail.com
+Project-URL: Bug Tracker, https://github.com/DILPREET1910/Hand_gestures_module/issues
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE

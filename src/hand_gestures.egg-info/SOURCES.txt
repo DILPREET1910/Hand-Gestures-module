@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/Hand_Gestures/HandTrackingModule.py
+src/Hand_Gestures/__init__.py
+src/hand_gestures.egg-info/PKG-INFO
+src/hand_gestures.egg-info/SOURCES.txt
+src/hand_gestures.egg-info/dependency_links.txt
+src/hand_gestures.egg-info/top_level.txt
